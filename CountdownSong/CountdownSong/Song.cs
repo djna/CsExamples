@@ -1,22 +1,43 @@
 ﻿namespace CountdownSong;
 public class Song
 {
+    private string quantityText(int number){
+        switch (number){
+            case 0: return "no more cans";
+            case 1: return "1 can";
+            default: return $"{number} cans";
+        }
+    }
+
+    private string action(int number){
+        switch (number){
+            case 0: return "Go to the store and buy some more";
+            case 1: return "Take it down and pass it around";
+            default: return "Take one down and pass it around";
+        }
+    }
+
+    private int nextQuantity(int number){
+        return number > 0 ? number -1 : 99; 
+    }
+
+    private string capitalize(string str)
+{
+    if (str == null)
+        return null;
+
+    if (str.Length > 1)
+        return char.ToUpper(str[0]) + str.Substring(1);
+
+    return str.ToUpper();
+}
 
     public string Verse( int number){
-        switch (number){
-            case 2: return 
-                        "2 cans of Lilt on the wall, 2 cans of Lilt.\n" +
-                        "Take one down and pass it around, 1 can of Lilt on the wall.\n";
-            case 1: return 
-                        "1 can of Lilt on the wall, 1 can of Lilt.\n" +
-                        "Take it down and pass it around, no more cans of Lilt on the wall.\n";
-            case 0: return 
-                        "No more cans of Lilt on the wall, no more cans of Lilt.\n" +
-                        "Go to the store and buy some more, 99 cans of Lilt on the wall.\n";
-            default: return 
-                        $"{number} cans of Lilt on the wall, {number} cans of Lilt.\n" +
-                        $"Take one down and pass it around, {number-1} cans of Lilt on the wall.\n";
-        }
+      
+        return 
+            $"{capitalize(quantityText(number))} of Lilt on the wall, {quantityText(number)} of Lilt.\n" +
+            $"{action(number)}, {quantityText(nextQuantity(number))} of Lilt on the wall.\n";
+        
     }
 
 }
