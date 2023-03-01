@@ -5,15 +5,13 @@ class Program
     static void Main(string[] args)
     {
       
- 
-            Console.WriteLine("Singing ...");
-
             Song mySong = new Song();
-        
-            string song = mySong.Verse(99);
+            string songText = "Singing ...";
+            for ( int i = 99; i >=0 ; i--){
+                songText += mySong.Verse(i);
+            }
 
-            Console.WriteLine($"{song}");
-
-        
+            Console.WriteLine($"{songText}");
+  
     }
 }
