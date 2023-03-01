@@ -54,7 +54,7 @@ public class VerseTest
             "No more cans of Lilt on the wall, " +
             "no more cans of Lilt.\n" +
             "Go to the store and buy some more, " +
-            "99cans of Lilt on the wall.\n";
+            "99 cans of Lilt on the wall.\n";
          Assert.AreEqual(verse, expected);
     }
 }
