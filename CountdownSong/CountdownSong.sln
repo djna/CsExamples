@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CountdownSong", "CountdownS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Singer", "Singer\Singer.csproj", "{0A4698FE-15E6-4BB6-B386-D06382048600}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CountdownSongTest", "CountdownSongTest\CountdownSongTest.csproj", "{3C2B0EA5-5F69-481B-BA47-38506A15E7C0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{0A4698FE-15E6-4BB6-B386-D06382048600}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0A4698FE-15E6-4BB6-B386-D06382048600}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0A4698FE-15E6-4BB6-B386-D06382048600}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C2B0EA5-5F69-481B-BA47-38506A15E7C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C2B0EA5-5F69-481B-BA47-38506A15E7C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C2B0EA5-5F69-481B-BA47-38506A15E7C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C2B0EA5-5F69-481B-BA47-38506A15E7C0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
