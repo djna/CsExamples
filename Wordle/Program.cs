@@ -39,14 +39,17 @@
 
     class WordList {
         private string[] myWords;
+        private Random random;
         public WordList(){
             string[] someWords = new string[]{ "anvil", "boxes", "croft", "dance"};
             myWords = someWords;
             Console.WriteLine("WordList {0}", string.Join(",", myWords) );
+            random = new Random();
         }
 
         public string getRandomWord(){
-            return myWords[0];
+            int index = random.Next(myWords.Length);
+            return myWords[index];
         }
 
 
