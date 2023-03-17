@@ -11,7 +11,7 @@
             while( action != "X"){
                
                 Console.WriteLine("(P)lay or e(X)it)");
-                action = Console.ReadLine().ToUpper();
+                action = (Console.ReadLine() ?? "").ToUpper();
                 if ( action == "P"){
                     theWordle.playWordle();
                 }
@@ -21,14 +21,32 @@
 
         }
     }
-
     class Wordle {
+        WordList myWordList;
         public Wordle(){
+            myWordList = new WordList();
             Console.WriteLine("Hello from Wordle!");
+
         }
 
         public void playWordle(){
-            Console.WriteLine("Apologies, playing not yet implemented");
+            string target = myWordList.getRandomWord();
+            Console.WriteLine("Apologies, playing not yet implemented. Target was {0}", target);
+        }
+
+
+    }
+
+    class WordList {
+        private string[] myWords;
+        public WordList(){
+            string[] someWords = new string[]{ "anvil", "boxes", "croft", "dance"};
+            myWords = someWords;
+            Console.WriteLine("WordList {0}", string.Join(",", myWords) );
+        }
+
+        public string getRandomWord(){
+            return myWords[0];
         }
 
 
