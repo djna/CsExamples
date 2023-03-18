@@ -40,11 +40,15 @@ namespace Wordle
            
             try {
                 string contents = File.ReadAllText("Wonder.txt");
-                string pattern = @"\b\w+\b";
+                string pattern = @"(?!.{0,4}\d)(?!.{0,4}_)\b\w{5}\b";
                 myWords = Regex.Matches(contents, pattern)
                        .Cast<Match>()
-                       .Select(m => m.Value)
+                       .Select(m => m.Value.ToLower())
                        .Distinct()
+                       .Where(word => 
+                                 word.Length 
+                                 == new HashSet<char>(word.ToCharArray()).Count()    
+                       )
                        .ToArray();
                 Array.Sort(myWords);
                 
@@ -53,7 +57,7 @@ namespace Wordle
                 myWords = new string[]{ "anvil", "boxes", "croft", "dance"};
             }
             
-            Console.WriteLine("WordList {0} {1}", 
+            Console.WriteLine("WordList {0} entries: {1}", 
                         myWords.Length,
                         string.Join(",", myWords) );
             random = new Random();
