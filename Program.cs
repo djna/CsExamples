@@ -71,14 +71,9 @@ namespace Sudoku
 
     private static void PrintBoard(int[][] currentBoard)
     {
-      foreach (var row in currentBoard)
-      {
-        foreach (var cell in row)
-        {
-          Console.Write(cell == 0 ? "  " : cell + " ");
-        }
-        Console.WriteLine();
-      }
+
+      Console.WriteLine("*** TODO ***");
+     
     }
 
     private static bool ValidInSlot(int[][] board, Tuple<int, int> slot, int value)
@@ -90,27 +85,19 @@ namespace Sudoku
 
     private static bool DoesNotExistInRow(int[] row, int value)
     {
-      return !row.Contains(value);
+      // TODO implement a check that value not already in specified row
+      return true;
     }
 
     private static bool DoesNotExistInColumn(int[][] board, int column, int value)
     {
-      return board.All(row => row[column] != value);
+      // TODO implement a check that value not already in specified column
+      return true;
     }
 
     private static bool DoesNotExistInSquare(int[][] board, Tuple<int, int> slot, int value)
     {
-      int squareY = slot.Item1 / 3;
-      int squareX = slot.Item2 / 3;
-
-      for (int y = squareY * 3; y < (squareY + 1) * 3; y++)
-      {
-        for (int x = squareX * 3; x < (squareX + 1) * 3; x++)
-        {
-          if (board[y][x] == value) return false;
-        }
-      }
-
+      // TODO implement a check that value not already in current square
       return true;
     }
 
